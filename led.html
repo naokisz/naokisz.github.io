@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta name="description" content="Naokisz">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Naokisz</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/naokisz">View on GitHub</a>
+
+          <h1 id="project_title"><!--<a href=="index.html">-->Naokisz<!--</a>--></h1>
+          <h2 id="project_tagline"></h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <article id="main_content" class="inner">
+			<h1>linuxでのLED制御</h1>
+			<p>linuxを使い始めた時からずっと気になってたことが有りました。<br>
+			それは、windowsを使ってた時は無線LAN子機通信時に
+			電源ボタン近くにある無線LAN通信LEDが点滅してたのですが、
+			linuxの場合は全く点滅せず光りっぱなしということです。<br><br>
+			まあ、それで何か困ったという訳では無いのですが、
+			少し気になって調べてみたらled class driverというものが
+			有ったことを知りました。<br>
+			そしてwebページ（URL忘れた）の言っていたとおり、/sys/class/leds/
+			を覗いてみると、もう名前からしてそれっぽいath9k-phy0という
+			リンクが有り、<code>echo 0 > brightness</code>をしてみると
+			無線LAN通信LEDが消えました。<br><br>
+			今までラズパイやマイコンなどでLEDを制御したみたいな経験が無いので、
+			たったLEDを消しただけなのですが、linux kernel device driverの世界に
+			Hello World!!したみたいな気持ちでした。<br><br>
+			LEDが消せたぐらいで感動してしまったのですが、本当はそのLEDを本来の
+			無線LAN通信LEDとしての役割をさせたかったので、
+			<code>echo phy0tpt > trigger</code>をlc.localに追記して
+			長年の謎をやっと解くことに成功しました。
+			</p>
+			<h2>ちょっと遊んでみた</h2>
+			<p>led class driverは基本、どこに有るLEDでも、本来使われるべき用途が
+			何であろうと、認識さえしていれば、どのような目的にでも使うことが出来ます。（？）<br>
+			無線LAN通信LEDをUSBの通信ランプにすることも、
+			キーボードのnumlockLEDをUSBの通信ランプにすることも・・・。
+			（私のパソコンで使えるtriggerの中で一番点滅してくれるのがusb-hostだからお面白いというだけ）
+			<S>キーボードのLEDの寿命を短くするの楽しい！！</S>
+			</p>
+			<h2>スマホのLED</h2>
+			<p>私のスマホにも/sys/class/leds/が有るのですが、ある筈のないキーボードバックライト
+			制御用のLEDや、どこにも無さそうなSDカード用のLEDとかがあって良く分からないです。
+			唯一特定出来たのは、カメラのフラッシュ用LEDだけで全く使い物になりません。<br>
+			通知用LEDが有るのですが、何故かled class driverでは使えないようですね。
+			まあ、これからも使う方法を探していくのですが。<br>
+			<S>シャープは屑。</S>
+			</p>
+      </article>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
