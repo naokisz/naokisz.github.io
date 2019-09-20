@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta name="description" content="Naokisz">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Naokisz</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/naokisz">View on GitHub</a>
+
+          <h1 id="project_title"><a href="index.html"><font color="white">Naokisz</font></a></h1>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <article id="main_content" class="inner">
+      	<h3>アスタルテゆるゆるアドベントカレンダー 2018（？？？）12月24日分の記事</h3>
+	<h1>マストドン周辺のセキュリティについて</h1>
+	<p>この記事は<a href="https://adventar.org/calendars/3503">アスタルテゆるゆるアドベントカレンダー</a>で12月24日までに書かれる筈だった24日目の記事です。前日分はkirishima21さんの<a href="https://kirishima.cloud/@Kirishimalab21/101289666830488336">抗生物質について書きます</a>、次の日の分は黒猫大好きっ子さんの<a href="https://kirishima.cloud/@kokosuMIX/101301467113607110">黒猫大好きっ子さん: "結局今年もクリぼっちだった君たちへ" - アスタルテ</a>です。</p><br>
+	<h2>お詫びの言葉</h2>
+	<p>2018年のアドベントカレンダーなのですが、2019年になってから書き始めています。（正確には3月を過ぎてから）名前からしてゆるゆるなカレンダーなので大目に見てあげて下さい・・・。（？）枠を空けたままにしてもらえてありがとうございます。（お詫び #とは）</p>
+	<h2>ところで</h2>
+	<img src="https://media-astarte.global.ssl.fastly.net/media_attachments/files/001/476/959/original/c11f6dd633d15e73.png">
+	<p>これは私のアスタルテでのアカウントの画像なのですが、この画像に結構関わりのある事をちょっと書いていこうかなと思っています。ちなみに、使っているテーマは、High contrast+classificationです！（このテーマ、アスタルテに居るなら絶対に使うべきだと思うほど最高だと思っている。トゥートが未収載なのか非公開なのか直ぐに分かる。）</p>
+	<h2>dev鯖について</h2>
+	<p>まずはこの事を話すときには欠かすことの出来ない存在、dev鯖の事から話していきましょうか。画像のアカウントのアイコンを囲んでいる青い囲みはアスタルテのdev鯖へのログインする事の出来る権限を持っている証になっています。アスタルテのdev鯖は、元々はアスタルテの開発段階の不安定なコードをテストする場所として作られたのですが、時々dev鯖民だけでのお喋り鯖になったり、<s>誰かさんが登録してから、セキュリティに関する話題が投げられる鯖になったり</s>してます。一般人が触るとやけどするような内容が沢山書かれている鯖です。<s>霧島さんのやる気が無くなっていつの間にか消滅してました。</s></p>
+	<h2>二つ名について</h2>
+	<p>ファボおじはアスタルテに居る人ならば<s>ミュートとかブロックしてない限り</s>体感しているでしょうから（白目）XSSハンターと霧島さんに二つ名を名付けられる理由を説明していきますか・・・。（そろそろ書くやる気が無くなってきた）</p>
+	<h3>アスタルテmarkdown実装までの歴史を軽く</h3>
+	<p><s>こいつホームページに歴史書きたがるよなぁ。</s>一代目のmarkdownが実装されたのは2017年前半位だったような気がします。<s>昔過ぎて忘れました。</s>この時は<s>Rustはいいゾ！さん</s><a href="https://kirishima.cloud/@mopopo">もぽぽさん</a>がコードを書いてくれました。私は何か動作がおかしいと気付き、色々と試した結果<a href="https://viral-community.com/blog/xss-1835/">XSS</a>という脆弱性を見つけてしまいました。このお陰でdev鯖への切符を手にしました。<s>ヤバイゴリラを檻に閉じ込めた訳ではないと信じている。</s>このお陰で一代目markdownは終焉を迎えます。これからのmarkdownのコードは霧島さんが作ることになっていきます。少し時間が経った後に二代目のmarkdownが実装されました。二代目は割と色々とXSS脆弱性が見つかっていくのですが、霧島さんがdev鯖で割とスピーディーに対応していってくれたので、そこそこ続いていきました。ただこの二代目もちょっとデカ目のXSS脆弱性が見つかってしまって、暫く休止した後に三代目markdownが実装されました。三代目になってくると流石に脆弱性は私の手には負えなくなっていき、脆弱性がポンポン見つかる訳にはいかなくなってくるのですが、不具合やバグがちょいちょいあったので、dev鯖はとても活発でした。脆弱性に関係無くとも、二代目か三代目辺りで、強調markdownがBBCodeの機能と被るからと上付き文字、下付き文字、小さい文字など今のアスタルテmarkdownが形作られ、更に見た目が華やかになったりと使いやすい物になっていきました。</p>
+	<h3>アスタルテだけではなかった</h3>
+	<p>アスタルテで脆弱性の見つけ方を知ってしまった私は似たような感じでweb系のクライアントに手を出していきます・・・。knzkappではちゃんと<a href="https://github.com/yuzulabo/KnzkApp/commit/fc669e9a6ce81c0beeba9dd702f187b592662807">私の名前入った修正コミット</a>をしてくれて（今でも私の誇り）、TheDeskでも少しは見つけていったような気がします。
+	<h2>伝えたいこと</h2>
+	<p>mastodonの独自機能やwebクライアントを作る時はXSSに気をつけようね！（白目）私がぶち抜いちゃうぞ！（白目）</p>
+	<h2>後書き</h2>
+	<p>もっと書きたいことがあったけど、【裏での様々な事情】があって書けない。<s>知りたい人は今は亡きdev鯖で！</s><br><br>内容がブレブレになってしまったけど、許して・・・。<br><br>記事書くの遅くなりました。すみません。忙しかったんです。許して・・・。<br><br>BBCode最近書いてないので暇だったら書いていきたいなぁ。というか、自動生成させたい。（しんどい）<br><br>アスタルテに新しいBBCode4個を投げるかもしれないし、投げないかもしれない。<br><br>取り敢えず早くdev鯖復活して。遊び場が無くなってしまった。</p>
+      </article>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
